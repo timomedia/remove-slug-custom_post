@@ -4,7 +4,7 @@
 function gp_remove_cpt_slug( $post_link, $post, $leavename ) {
  
     if ( ('course' == $post->post_type || 'portfolio' == $post->post_type ) && 'publish' == $post->post_status ) {
-    $post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
+    $post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link ); // change 'course' and 'portfolio' to your slug.
         return $post_link;
     }
     return $post_link;
@@ -24,6 +24,6 @@ function gp_add_cpt_post_names_to_main_query( $query ) {
 		return;
 	}
 	// Add CPT to the list of post types WP will include when it queries based on the post name.
-	$query->set( 'post_type', array( 'post', 'page', 'course', 'portfolio' ) );
+	$query->set( 'post_type', array( 'post', 'page', 'course', 'portfolio' ) ); // change 'course' and 'portfolio' to your slug
 }
 add_action( 'pre_get_posts', 'gp_add_cpt_post_names_to_main_query' );
