@@ -1,3 +1,4 @@
+<?php
 /**
  * Remove the course slug from published post permalinks. Only affect our custom post type, though.
  */
